@@ -1,0 +1,230 @@
+{
+	"ImportPath": "code",
+	"GoVersion": "go1.12",
+	"GodepVersion": "v80",
+	"Deps": [
+		{
+			"ImportPath": "backend/common/clog",
+			"Rev": "b821c4856d5b9be911143e0286b2be835d863d12"
+		},
+		{
+			"ImportPath": "backend/common/config",
+			"Rev": "b821c4856d5b9be911143e0286b2be835d863d12"
+		},
+		{
+			"ImportPath": "backend/common/cryptoutil",
+			"Rev": "b821c4856d5b9be911143e0286b2be835d863d12"
+		},
+		{
+			"ImportPath": "backend/common/errcode",
+			"Rev": "b821c4856d5b9be911143e0286b2be835d863d12"
+		},
+		{
+			"ImportPath": "backend/common/gls",
+			"Rev": "b821c4856d5b9be911143e0286b2be835d863d12"
+		},
+		{
+			"ImportPath": "backend/common/httputil",
+			"Rev": "b821c4856d5b9be911143e0286b2be835d863d12"
+		},
+		{
+			"ImportPath": "backend/common/kafkautil",
+			"Rev": "b821c4856d5b9be911143e0286b2be835d863d12"
+		},
+		{
+			"ImportPath": "backend/common/monitor",
+			"Rev": "b821c4856d5b9be911143e0286b2be835d863d12"
+		},
+		{
+			"ImportPath": "backend/common/redisutil",
+			"Rev": "b821c4856d5b9be911143e0286b2be835d863d12"
+		},
+		{
+			"ImportPath": "backend/common/stringutil",
+			"Rev": "b821c4856d5b9be911143e0286b2be835d863d12"
+		},
+		{
+			"ImportPath": "backend/common/structutil",
+			"Rev": "b821c4856d5b9be911143e0286b2be835d863d12"
+		},
+		{
+			"ImportPath": "backend/common/trace",
+			"Rev": "b821c4856d5b9be911143e0286b2be835d863d12"
+		},
+		{
+			"ImportPath": "backend/common/utils",
+			"Rev": "b821c4856d5b9be911143e0286b2be835d863d12"
+		},
+		{
+			"ImportPath": "third/context",
+			"Rev": "e8775ff78ce91dcee9661831ab97ede324370f65"
+		},
+		{
+			"ImportPath": "third/crc32",
+			"Rev": "19b0b332c9e4516a6370a0456e6182c3b5036720"
+		},
+		{
+			"ImportPath": "third/etcd-client",
+			"Rev": "0f6ee4fcd8661206e87df3a77bc7034d6cf0cc26"
+		},
+		{
+			"ImportPath": "third/etcd/pkg/pathutil",
+			"Comment": "v2.3.0-alpha.1-63-gd8b124cf",
+			"Rev": "d8b124cf3a259924aef604c394a4bd8b9a2fd0fe"
+		},
+		{
+			"ImportPath": "third/etcd/pkg/types",
+			"Comment": "v2.3.0-alpha.1-63-gd8b124cf",
+			"Rev": "d8b124cf3a259924aef604c394a4bd8b9a2fd0fe"
+		},
+		{
+			"ImportPath": "third/g2s",
+			"Rev": "b079ff68e3286f9c511e0456bdcd3787f217153c"
+		},
+		{
+			"ImportPath": "third/gin",
+			"Rev": "024a136bc39ea2efde7561c9859471d1dff91e27"
+		},
+		{
+			"ImportPath": "third/gin/binding",
+			"Rev": "024a136bc39ea2efde7561c9859471d1dff91e27"
+		},
+		{
+			"ImportPath": "third/gin/render",
+			"Rev": "024a136bc39ea2efde7561c9859471d1dff91e27"
+		},
+		{
+			"ImportPath": "third/go-cache",
+			"Rev": "58025fcf226df43e69edfaf161170e0c7e0549cf"
+		},
+		{
+			"ImportPath": "third/go-codec/codec",
+			"Rev": "03b46f3d7a8e0457836a5ecd906b4961a5815a63"
+		},
+		{
+			"ImportPath": "third/go-colorable",
+			"Rev": "e9e01442ee69c11e5625627bd147d1db1f0e752f"
+		},
+		{
+			"ImportPath": "third/go-isatty",
+			"Rev": "0df0d0992cb73c37a02d9404f3a4df40d3cb3274"
+		},
+		{
+			"ImportPath": "third/go-local",
+			"Rev": "b1e67a1a8e49ea5dbe86b6367689e222d68d97fe"
+		},
+		{
+			"ImportPath": "third/go-logging",
+			"Comment": "1.0.0.1-26-gd803e4d",
+			"Rev": "d803e4db1894bd26c3a41fd900ab072ead0e3e72"
+		},
+		{
+			"ImportPath": "third/go-metrics",
+			"Rev": "b0d4181dceb0ecc16dd5c72df0af975efd9c3304"
+		},
+		{
+			"ImportPath": "third/go-resiliency/breaker",
+			"Rev": "b86b1ec0dd4209a588dc1285cdd471e73525c0b3"
+		},
+		{
+			"ImportPath": "third/go-spew/spew",
+			"Comment": "v1.1.0",
+			"Rev": "346938d642f2ec3594ed81d874461961cd0faa76"
+		},
+		{
+			"ImportPath": "third/go-sql-driver/mysql",
+			"Comment": "v1.0.0.0-7-g411db61",
+			"Rev": "411db61edc60452edf499ff7a85ce6f766b1a68e"
+		},
+		{
+			"ImportPath": "third/go-xerial-snappy",
+			"Rev": "3382ae2a4cb291015c6c37a0a6b795ac08abc9dd"
+		},
+		{
+			"ImportPath": "third/golang.org/x/net/http2",
+			"Comment": "1.0.0.0-5-gbc9f921",
+			"Rev": "bc9f9217caa8b20933a7fdc853465b97fe27c407"
+		},
+		{
+			"ImportPath": "third/golang.org/x/net/http2/hpack",
+			"Comment": "1.0.0.0-5-gbc9f921",
+			"Rev": "bc9f9217caa8b20933a7fdc853465b97fe27c407"
+		},
+		{
+			"ImportPath": "third/gorm",
+			"Comment": "1.0.0.0-15-g0dea1c4",
+			"Rev": "0dea1c45c1827c41ca551199df28107fc9aeced5"
+		},
+		{
+			"ImportPath": "third/goroutine",
+			"Rev": "5c1dbbcb0cb62c78f4878004682170a30af8b46b"
+		},
+		{
+			"ImportPath": "third/goroutineid",
+			"Rev": "3f017b3ebebf443524ed7641208628dc1cc807e6"
+		},
+		{
+			"ImportPath": "third/http_client_cluster",
+			"Rev": "dd8c5d91c383224d22c2a55c97e7a172681d1623"
+		},
+		{
+			"ImportPath": "third/httprouter",
+			"Rev": "6ab31338b6fe01c5b1b14d478333a9285fda638d"
+		},
+		{
+			"ImportPath": "third/hystrix",
+			"Rev": "6e88279c4ff0f8964fa39a153f4cc826e4a62d3d"
+		},
+		{
+			"ImportPath": "third/hystrix/metric_collector",
+			"Rev": "6e88279c4ff0f8964fa39a153f4cc826e4a62d3d"
+		},
+		{
+			"ImportPath": "third/hystrix/rolling",
+			"Rev": "6e88279c4ff0f8964fa39a153f4cc826e4a62d3d"
+		},
+		{
+			"ImportPath": "third/lz4",
+			"Rev": "09b9cfc97ad80298267f102a59d11d537a58f24f"
+		},
+		{
+			"ImportPath": "third/pq/hstore",
+			"Comment": "1.0.0.0-2-gd6fb99b",
+			"Rev": "d6fb99bd1669524d5be7ff003ac089d695a6c390"
+		},
+		{
+			"ImportPath": "third/queue",
+			"Rev": "566e8a21cc261b068ecfc134a6de79742a850d2f"
+		},
+		{
+			"ImportPath": "third/raven-go",
+			"Rev": "74c334d7b8aaa4fd1b4fc6aa428c36fed1699e28"
+		},
+		{
+			"ImportPath": "third/redigo/internal",
+			"Comment": "1.0.0.0-3-gc30570d",
+			"Rev": "c30570df0bfc7374feac6065f5ae15e8f694f3d4"
+		},
+		{
+			"ImportPath": "third/redigo/redis",
+			"Comment": "1.0.0.0-3-gc30570d",
+			"Rev": "c30570df0bfc7374feac6065f5ae15e8f694f3d4"
+		},
+		{
+			"ImportPath": "third/sarama",
+			"Rev": "93c0ab17a58e16c69bd5573aec883a9c5f7e8e3d"
+		},
+		{
+			"ImportPath": "third/sarama-cluster",
+			"Rev": "9f135e1edcd2964c85873c6a5524f49e00e97733"
+		},
+		{
+			"ImportPath": "third/snappy",
+			"Rev": "34040df428fe3cde147c12c25e82bffd1189ae10"
+		},
+		{
+			"ImportPath": "third/xxHash/xxHash32",
+			"Rev": "e07ae5bb4a8e25d017243d7c973a02764bf6298e"
+		}
+	]
+}
