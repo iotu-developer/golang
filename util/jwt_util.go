@@ -1,8 +1,8 @@
 package util
 
 import (
-	"code/model"
 	"github.com/dgrijalva/jwt-go"
+	"golang/model"
 	"time"
 )
 

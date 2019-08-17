@@ -2,9 +2,9 @@ package main
 
 import (
 	"backend/common/clog"
-	"code/dbutil"
-	"code/router"
 	"fmt"
+	"golang/dbutil"
+	"golang/router"
 	"runtime"
 )
 

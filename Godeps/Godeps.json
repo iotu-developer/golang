@@ -1,5 +1,5 @@
 {
-	"ImportPath": "code",
+	"ImportPath": "golang",
 	"GoVersion": "go1.12",
 	"GodepVersion": "v80",
 	"Deps": [
@@ -54,6 +54,11 @@
 		{
 			"ImportPath": "backend/common/utils",
 			"Rev": "b821c4856d5b9be911143e0286b2be835d863d12"
+		},
+		{
+			"ImportPath": "github.com/dgrijalva/jwt-go",
+			"Comment": "v3.2.0-10-g5e25c22",
+			"Rev": "5e25c22bd5d6de03265bbe5462dcd162f85046f6"
 		},
 		{
 			"ImportPath": "third/context",

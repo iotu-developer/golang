@@ -1,9 +1,9 @@
 package router
 
 import (
-	"code/fliter"
-	"code/views"
 	"fmt"
+	"golang/fliter"
+	"golang/views"
 	"third/gin"
 )
 
@@ -16,6 +16,8 @@ func StartHttpServer() {
 		Account.POST("/login", views.AccountLogin)
 	}
 
+	// 静态资源返回
+	router.Static("/static", "./static")
 	router.Use(fliter.Authorize()) //使用Authorize()中间件身份验证
 
 	code := router.Group("/code")
@@ -24,5 +26,6 @@ func StartHttpServer() {
 		code.GET("/Check", views.CheckCode)
 		code.GET("/Consume", views.ConsumeCode)
 	}
+
 	_ = router.Run(":7777")
 }

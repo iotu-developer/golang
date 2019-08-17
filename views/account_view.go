@@ -3,8 +3,8 @@ package views
 import (
 	"backend/common/clog"
 	"backend/common/httputil"
-	"code/basic"
-	"code/controller"
+	"golang/basic"
+	"golang/controller"
 	"third/gin"
 )
 

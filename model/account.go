@@ -1,8 +1,8 @@
 package model
 
 import (
-	"code/dbutil"
 	"fmt"
+	"golang/dbutil"
 	"third/gorm"
 	"time"
 )
