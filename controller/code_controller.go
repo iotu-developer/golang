@@ -51,9 +51,9 @@ func ConsumeCode(consumerId, code string) (ans bool) {
 		return false
 	} else {
 		updateMap := map[string]interface{}{
-			"consumer_user_id": consumerId,
-			"state":            0,
-			"consume_at":       time.Now(),
+			"consume_user_id": consumerId,
+			"state":           0,
+			"consume_at":      time.Now(),
 		}
 		err = ActiveCode.UpdateStateAndConsumer(updateMap)
 		if err != nil {

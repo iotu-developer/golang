@@ -7,13 +7,13 @@ import (
 )
 
 type Code struct {
-	Id             int       `gorm:"id"`              //自增主键
-	CreateUserId   string    `gorm:"create_user_id"`  //创建者ID
-	ConsumerUserId string    `gorm:"consume_user_id"` //使用者ID
-	ActiveCode     string    `gorm:"active_code"`     //激活码
-	State          int       `gorm:"state"`           //激活码状态 0：失效；1：有效
-	CreateAt       time.Time `gorm:"create_at"`       //创建时间
-	ConsumeAt      time.Time `gorm:"consume_at"`      //使用时间
+	Id            int       `gorm:"id"`              //自增主键
+	CreateUserId  string    `gorm:"create_user_id"`  //创建者ID
+	ConsumeUserId string    `gorm:"consume_user_id"` //使用者ID
+	ActiveCode    string    `gorm:"active_code"`     //激活码
+	State         int       `gorm:"state"`           //激活码状态 0：失效；1：有效
+	CreateAt      time.Time `gorm:"create_at"`       //创建时间
+	ConsumeAt     time.Time `gorm:"consume_at"`      //使用时间
 }
 
 var (

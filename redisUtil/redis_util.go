@@ -5,7 +5,7 @@ import (
 	"third/redigo/redis"
 )
 
-const redisIP = "139.155.87.206:6379"
+const redisIP = "47.108.85.83:6379"
 
 //设置key-value
 func SetString(key, value string) (result bool) {

@@ -15,11 +15,9 @@ func StartHttpServer() {
 		Account.POST("/register", views.AccountRegister)
 		Account.POST("/login", views.AccountLogin)
 	}
-
+	router.Use(fliter.Authorize()) //使用Authorize()中间件身份验证
 	// 静态资源返回
 	router.Static("/static", "./static")
-	router.Use(fliter.Authorize()) //使用Authorize()中间件身份验证
-
 	code := router.Group("/code")
 	{
 		code.GET("/Create", views.CreateCode)

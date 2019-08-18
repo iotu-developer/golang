@@ -8,7 +8,7 @@ import (
 )
 
 var IOTUGormDb *gorm.DB
-var DatabaseConnection = "iotu:IOTU.club666@tcp(139.155.87.206:3306)/IOTU?charset=utf8&parseTime=true"
+var DatabaseConnection = "root:IOTU.club666@tcp(47.108.85.83:3306)/IOTU?charset=utf8&parseTime=true"
 
 //初始化GORM数据库连接池
 func InitGormDb(setLog bool) (*gorm.DB, error) {

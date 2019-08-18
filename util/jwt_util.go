@@ -1,8 +1,10 @@
 package util
 
 import (
+	"backend/common/clog"
 	"github.com/dgrijalva/jwt-go"
 	"golang/model"
+	"golang/redisUtil"
 	"time"
 )
 
@@ -21,6 +23,27 @@ func GenerateToken(user *model.Account) (string, error) {
 }
 
 //验证token
-func CheckToken(token string) (state bool) {
-	return true
+func CheckToken(tokenStr string) (result bool) {
+	//根据盐值把tokenStr转换成token结构体
+	tokenInfo, _ := jwt.Parse(tokenStr, func(token *jwt.Token) (i interface{}, e error) {
+		return SecretKey, nil
+	})
+	//拿到token结构体里的头部字段
+	finToken := tokenInfo.Claims.(jwt.MapClaims)
+	//拿到userName 类型为interface{}
+	userName := finToken["username"]
+	//类型断言
+	userNameValue, ok := userName.(string)
+	if ok {
+		temp := redisUtil.GetString(userNameValue)
+		if temp == tokenStr {
+			redisUtil.SetExpire(userNameValue, 3600)
+			return true
+		} else {
+			return false
+		}
+	} else {
+		clog.Errorf("从reids中获取UserName 类型断言失败")
+		return false
+	}
 }

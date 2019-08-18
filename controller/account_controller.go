@@ -5,11 +5,23 @@ import (
 	"errors"
 	"golang/basic"
 	"golang/model"
+	"golang/redisUtil"
 	"golang/util"
 	"time"
 )
 
 func AccountRegister(req basic.AccountRegisterReq) (err error) {
+	//检查激活码
+	if checkResult := CheckCode(req.ActiveCode); !checkResult {
+		clog.Errorf("激活码无效")
+		return errors.New("激活码无效")
+	}
+	//消耗掉激活码
+	if result := ConsumeCode(req.UserName, req.ActiveCode); !result {
+		clog.Errorf("消费激活码失败")
+		return errors.New("消费激活码失败")
+	}
+	//创建账号
 	account := model.Account{
 		UserName: req.UserName,
 	}
@@ -50,7 +62,18 @@ func AccountLogin(req basic.AccountLoginReq) (token string, err error) {
 		if token, err = util.GenerateToken(&account); err != nil {
 			clog.Errorf("token生成失败")
 			return "", errors.New("token生成失败")
+		} else {
+			IsSetRedisOk := redisUtil.SetString(account.UserName, token)
+			if IsSetRedisOk {
+				IsSetExpireOk := redisUtil.SetExpire(account.UserName, 3600)
+				if IsSetExpireOk {
+					return token, err
+				} else {
+					return "", errors.New("设置超时错误")
+				}
+			} else {
+				return "", errors.New("设置redis错误")
+			}
 		}
-		return token, err
 	}
 }
