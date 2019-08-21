@@ -25,11 +25,15 @@ func GenerateToken(user *model.Account) (string, error) {
 //验证token
 func CheckToken(tokenStr string) (result bool) {
 	//根据盐值把tokenStr转换成token结构体
-	tokenInfo, _ := jwt.Parse(tokenStr, func(token *jwt.Token) (i interface{}, e error) {
-		return SecretKey, nil
+	token, err := jwt.Parse(tokenStr, func(token *jwt.Token) (i interface{}, e error) {
+		return []byte(SecretKey), nil
 	})
+	if err != nil {
+		clog.Errorf("token异常 [err = %s]", err)
+		return false
+	}
 	//拿到token结构体里的头部字段
-	finToken := tokenInfo.Claims.(jwt.MapClaims)
+	finToken := token.Claims.(jwt.MapClaims)
 	//拿到userName 类型为interface{}
 	userName := finToken["username"]
 	//类型断言

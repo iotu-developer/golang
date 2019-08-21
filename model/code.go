@@ -17,9 +17,12 @@ type Code struct {
 }
 
 var (
-	IotuDb       = "IOTU"
-	CodeTable    = "code"
-	AccountTable = "user"
+	IotuDb           = "IOTU"
+	CodeTable        = "code"
+	AccountTable     = "user"
+	RotaryChartTable = "rotary_chart"
+	IotuMemberTable  = "iotu_members"
+	ColumnDataTable  = "column_data"
 )
 
 //获取code的数据库名
