@@ -10,7 +10,7 @@ import (
 func StartHttpServer() {
 	fmt.Println("StartServer")
 	router := gin.Default()
-
+	router.Use(fliter.Cors())
 	Account := router.Group("/account")
 	{
 		Account.POST("/register", views.AccountRegister)
