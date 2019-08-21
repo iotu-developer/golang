@@ -11,11 +11,16 @@ import (
 )
 
 func AccountRegister(req basic.AccountRegisterReq) (err error) {
-	//检查激活码
-	if checkResult := CheckCode(req.ActiveCode); !checkResult {
-		clog.Errorf("激活码无效")
-		return errors.New("激活码无效")
-	}
+	////检查激活码
+	//if checkResult := CheckCode(req.ActiveCode); !checkResult {
+	//	clog.Errorf("激活码无效")
+	//	return errors.New("激活码无效")
+	//}
+	////消耗掉激活码
+	//if result := ConsumeCode(req.UserName, req.ActiveCode); !result {
+	//	clog.Errorf("消费激活码失败")
+	//	return errors.New("消费激活码失败")
+	//}
 	//创建账号
 	account := model.Account{
 		UserName: req.UserName,
@@ -24,11 +29,6 @@ func AccountRegister(req basic.AccountRegisterReq) (err error) {
 	if isAccount {
 		clog.Errorf("该用户名已经存在 [UserName = %s]", req.UserName)
 		return errors.New("该用户名已经存在")
-	}
-	//消耗掉激活码
-	if result := ConsumeCode(req.UserName, req.ActiveCode); !result {
-		clog.Errorf("消费激活码失败")
-		return errors.New("消费激活码失败")
 	}
 	account.NickName = req.NickName
 	account.Password = req.Password
@@ -75,5 +75,21 @@ func AccountLogin(req basic.AccountLoginReq) (token string, err error) {
 				return "", errors.New("设置redis错误")
 			}
 		}
+	}
+}
+
+//检查用户名是否存在
+
+func CheckUserName(userName string) bool {
+	account := model.Account{
+		UserName: userName,
+	}
+	isAccount, _ := account.GetByUserName()
+	if !isAccount {
+		//可以注册
+		return true
+	} else {
+		//不可以注册
+		return false
 	}
 }

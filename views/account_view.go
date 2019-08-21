@@ -41,3 +41,14 @@ func AccountLogin(c *gin.Context) {
 		httputil.GinOKRsp(c, "", "登陆成功")
 	}
 }
+
+func CheckUserName(c *gin.Context) {
+	req := basic.CheckUserNameReq{}
+	if !c.Bind(&req) {
+		clog.Errorf("绑定参数失败")
+		httputil.GinErrRsp(c, "", "入参错误")
+		return
+	}
+	state := controller.CheckUserName(req.UserName)
+	httputil.GinOKRsp(c, state, "查询成功")
+}

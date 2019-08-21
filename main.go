@@ -2,6 +2,7 @@ package main
 
 import (
 	"backend/common/clog"
+	"backend/common/config"
 	"fmt"
 	"golang/dbutil"
 	"golang/router"
@@ -14,6 +15,17 @@ func Init() {
 	dbutil.IOTUGormDb, err = dbutil.InitGormDb(true)
 	if err != nil {
 		fmt.Println("init third gps data failed")
+	}
+	//初始化日志
+	logConfig := config.LogConfig{
+		LogDir:   "/var/log/go_log",
+		LogFile:  "iotuWeb.log",
+		LogLevel: "DEBUG",
+	}
+	clog.Logger, err = clog.InitLoggerByConfig(&logConfig)
+	if nil != err {
+		fmt.Println("InitLogger err :", err)
+		return
 	}
 }
 

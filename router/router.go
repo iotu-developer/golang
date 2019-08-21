@@ -14,6 +14,7 @@ func StartHttpServer() {
 	Account := router.Group("/account")
 	{
 		Account.POST("/register", views.AccountRegister)
+		Account.GET("/checkUserName", views.CheckUserName)
 		Account.POST("/login", views.AccountLogin)
 	}
 
