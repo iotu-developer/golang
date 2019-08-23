@@ -2,9 +2,9 @@ package router
 
 import (
 	"fmt"
-	"golang/fliter"
-	"golang/views"
 	"third/gin"
+	"web/fliter"
+	"web/views"
 )
 
 func StartHttpServer() {

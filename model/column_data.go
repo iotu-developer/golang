@@ -2,7 +2,7 @@ package model
 
 import (
 	"fmt"
-	"golang/dbutil"
+	"web/dbutil"
 )
 
 type ColumnData struct {

@@ -2,8 +2,8 @@ package model
 
 import (
 	"fmt"
-	"golang/dbutil"
 	"time"
+	"web/dbutil"
 )
 
 type Code struct {

@@ -3,8 +3,8 @@ package views
 import (
 	"backend/common/clog"
 	"backend/common/httputil"
-	"golang/model"
 	"third/gin"
+	"web/model"
 )
 
 type GetUrlListReq struct {
@@ -34,6 +34,15 @@ type GetIotuMembersReq struct {
 	Offset int `json:"offset" form:"offset"` //起始行
 }
 
+//获取成员信息响应参数
+type GetIotuMembersResp struct {
+	Resp struct {
+		Status string             `json:"status"`
+		Data   []model.IotuMember `json:"data"`
+		Desc   string             `json:"description"`
+	}
+}
+
 func GetIotuMembers(c *gin.Context) {
 	req := GetIotuMembersReq{}
 	if !c.Bind(&req) {
@@ -57,6 +66,15 @@ func GetIotuMembers(c *gin.Context) {
 type GetColumnDataReq struct {
 	Limit  int `json:"limit" form:"limit"`   //每页容量
 	Offset int `json:"offset" form:"offset"` //起始行
+}
+
+//获取栏目信息响应参数
+type GetColumnDataResp struct {
+	Resp struct {
+		Status string             `json:"status"`
+		Data   []model.ColumnData `json:"data"`
+		Desc   string             `json:"description"`
+	}
 }
 
 func GetColumnData(c *gin.Context) {

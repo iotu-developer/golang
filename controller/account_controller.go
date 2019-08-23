@@ -3,11 +3,11 @@ package controller
 import (
 	"backend/common/clog"
 	"errors"
-	"golang/basic"
-	"golang/model"
-	"golang/redisUtil"
-	"golang/util"
 	"time"
+	"web/basic"
+	"web/model"
+	"web/redisUtil"
+	"web/util"
 )
 
 func AccountRegister(req basic.AccountRegisterReq) (err error) {

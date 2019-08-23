@@ -3,9 +3,9 @@ package util
 import (
 	"backend/common/clog"
 	"github.com/dgrijalva/jwt-go"
-	"golang/model"
-	"golang/redisUtil"
 	"time"
+	"web/model"
+	"web/redisUtil"
 )
 
 const SecretKey = "iotu"

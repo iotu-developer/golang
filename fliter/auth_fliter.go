@@ -1,9 +1,9 @@
 package fliter
 
 import (
-	"golang/util"
 	"net/http"
 	"third/gin"
+	"web/util"
 )
 
 func Authorize() gin.HandlerFunc {

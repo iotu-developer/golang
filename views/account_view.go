@@ -3,9 +3,9 @@ package views
 import (
 	"backend/common/clog"
 	"backend/common/httputil"
-	"golang/basic"
-	"golang/controller"
 	"third/gin"
+	"web/basic"
+	"web/controller"
 )
 
 func AccountRegister(c *gin.Context) {

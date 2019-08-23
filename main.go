@@ -4,9 +4,9 @@ import (
 	"backend/common/clog"
 	"backend/common/config"
 	"fmt"
-	"golang/dbutil"
-	"golang/router"
 	"runtime"
+	"web/dbutil"
+	"web/router"
 )
 
 //初始化

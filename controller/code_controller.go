@@ -2,7 +2,7 @@ package controller
 
 import (
 	"backend/common/clog"
-	"golang/model"
+	"web/model"
 
 	"math/rand"
 	"third/gorm"
