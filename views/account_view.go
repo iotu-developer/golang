@@ -9,6 +9,7 @@ import (
 )
 
 func AccountRegister(c *gin.Context) {
+	clog.Warnf("正在注册")
 	req := basic.AccountRegisterReq{}
 	if !c.Bind(&req) {
 		clog.Errorf("绑定参数失败")
@@ -26,6 +27,7 @@ func AccountRegister(c *gin.Context) {
 }
 
 func AccountLogin(c *gin.Context) {
+	clog.Warnf("正在登录")
 	req := basic.AccountLoginReq{}
 	//resp := basic.AccountLoginResp{}
 	if !c.Bind(&req) {

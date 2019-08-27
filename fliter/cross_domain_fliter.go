@@ -46,7 +46,7 @@ func Cors() gin.HandlerFunc {
 
 		//放行所有OPTIONS方法
 		if method == "OPTIONS" {
-			c.JSON(http.StatusOK, "Options Request!")
+			c.AbortWithStatus(http.StatusNoContent)
 		}
 		c.Next()
 	}
