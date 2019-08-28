@@ -39,7 +39,7 @@ func AccountLogin(c *gin.Context) {
 	if err != nil {
 		httputil.GinErrRsp(c, "", "登录失败")
 	} else {
-		c.Writer.Header().Add("token", token)
+		c.Writer.Header().Set("Token", token)
 		httputil.GinOKRsp(c, "", "登陆成功")
 	}
 }
