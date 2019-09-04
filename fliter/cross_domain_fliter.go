@@ -1,7 +1,6 @@
 package fliter
 
 import (
-	"backend/common/clog"
 	"fmt"
 	"net/http"
 	"strings"
@@ -11,7 +10,6 @@ import (
 func Cors() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		method := c.Request.Method
-		clog.Errorf("请求方法：%s", method)
 		origin := c.Request.Header.Get("Origin")
 		var headerKeys []string
 		for k, _ := range c.Request.Header {
@@ -24,7 +22,6 @@ func Cors() gin.HandlerFunc {
 			headerStr = "access-control-allow-origin, access-control-allow-headers"
 		}
 		if origin != "" {
-			clog.Debugf("正在执行origin操作 %s", method)
 			c.Writer.Header().Set("Access-Control-Allow-Origin", "*")
 			// 这是允许访问所有域
 			c.Writer.Header().Set("Access-Control-Allow-Origin", "*")
@@ -44,7 +41,6 @@ func Cors() gin.HandlerFunc {
 		}
 		//放行所有OPTIONS方法
 		if method == "OPTIONS" {
-			clog.Debugf("正在执行OPTIONS %s", method)
 			c.AbortWithStatus(http.StatusNoContent)
 			//c.JSON(http.StatusOK, "Options Request!")
 		}

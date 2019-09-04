@@ -25,6 +25,12 @@ func StartHttpServer() {
 		t.GET("/url_list", views.GetUrlList)
 		t.GET("/column_datas", views.GetColumnData)
 	}
+	//功能网页
+	function := router.Group("/info")
+	{
+		function.GET("/menu", views.GetMenu)
+		function.GET("/menu_classify", views.GetMenuClassify)
+	}
 
 	// 静态资源返回
 	router.Static("/static", "./static")
